@@ -1,0 +1,307 @@
+/*Обнуление*/
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+/*меняет подсчет ширины блока, что бы было удобней верстать*/
+*,*:before,*:after{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*убираем линии обводки у некоторых браузеров*/
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+/*делает значения html блочными*/
+nav,footer,header,aside{display: block;}
+
+/*уравнивает поведение шрифтов и элементов для разных браузеров.
+Например запрещает самовольное увеличение шрифта на Iphone*/
+html,body{
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-family: "Montserrat";
+    font-weight: 500;
+}
+
+/*наследование семейства шрифтов*/
+input,button,textarea{font-family:inherit;}
+
+/*убирает еще некоторые особенности браузеров. Кресты в input в Internet Explorer.
+лишние отступы в Firefox для кнопок. чистятся стили маркированных списков*/
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+/*обнуляем все заголовки*/
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+/*---------------------------------------------------------*/
+/*что бы в браузере не появился горизонтальный скрол*/
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+}
+/*технический класс. имеет параметры ограничивающего контейнера. margin выстроит контент по середине*/
+._container {
+    max-width: 1040px;
+    margin: 0 auto;
+}
+/*------------------------------------------------------*/
+.header{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 50;
+}
+
+.header__container{
+    display: flex;
+    min-height: 89px;
+    align-items: center;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+/*характеристики меню*/
+.menu__link{
+    color: #737373;
+    font-weight: 600;
+    line-height: 170%;
+    padding: 10px;
+
+}
+
+.nav-line{
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    border: 1px solid #828282;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+
+}
+
+.under-header__container{
+    display: flex;
+    min-height: 283px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logo{
+    font-size: 48px;
+    font-weight: 900;
+    color: #070707;
+    padding: 70px 0 0 0;
+}
+.profession{
+    font-size: 18px;
+    color: #070707;
+    padding: 120px 0 0 0;
+}
+.leng{
+    font-size: 16px;
+    color: #828282;
+    transform: translateY(-2px) rotate(-90deg);
+    transform-origin: bottom right;
+}
+
+.main-image img{
+    width: 100%;
+    height: auto;
+}
+/*----------------ABOUT ME-------------------*/
+
+.about-me{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #F6F6F6;
+    margin: 104px auto 91px 0;
+    min-height: 506px;
+}
+.about-me__title{
+    font-weight: 700;
+    font-size: 34px;
+}
+.about-me__text{
+    text-align: center;
+    font-size: 18px;
+}
+.paragraf{
+    padding: 34px 0 0 0;
+    line-height: 24px;
+}
+
+.skills__body-about-me{
+    padding: 14px 0 14px 0;
+}
+
+.skills__icon-text{
+    padding: 14px 0 14px 0;
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+/*----------------SKILLS-------------------*/
+
+.skills{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.skills__title{
+    font-size: 34px;
+    color: #070707;
+    font-weight: 700;
+    padding-bottom: 69px;
+}
+.skills__subtitle{
+    font-size: 18px;
+    padding-bottom: 69px;
+}
+
+.skills__group{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.skills__body{
+    display: flex;
+    justify-content: center;
+}
+
+.skills__icon{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (max-width: 320px) {
+    .skills__icon {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .skills__body{
+
+    }
+}
+
+.skills__name{
+    text-align: center;
+    padding: 24px 0 41px  0;
+}
+
+/*----------------PORTFOLIO-------------------*/
+
+.portfolio{
+    background: #F6F6F6;
+    min-height: auto;
+    margin: 113px 0 96px 0;
+}
+
+.portfolio__content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.portfolio__title{
+    font-size: 34px;
+    line-height: 42px;
+    text-align: center;
+    font-weight: 700;
+    margin: 113px 0 47px 0;
+}
+
+.portfolio-item{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.portfolio-item__image img{
+    width: 100%;
+    height: auto;
+}
+.portfolio-item__title{
+    text-align: center;
+    margin: 45px 0 100px 0;
+    font-size: 18px;
+}
+
+/*----------------CONTACTS-------------------*/
+
+.contacts{}
+.contacts__content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.contacts__title{
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.contacts__subtitle{
+    font-size: 18px;
+    text-align: center;
+    line-height: 22px;
+    margin-bottom: 40px;
+}
+.contacts-button{
+    border-radius: 40px;
+    padding: 15px 30px;
+    background-color: black;
+    margin-bottom: 83px;
+    user-select: none;
+    display: block;
+    line-height: 22px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.contacts-button:hover{
+    border: 10px;
+}
+
+.contacts__icons img{
+    width: 40px;
+    height: 40px;
+    margin: 0 30px 45px 30px;
+
+}
+
+.contacts__footer{
+    text-align: center;
+    font-size: 14px;
+    line-height: 17px;
+    color: #828282;
+    margin-bottom: 123px;}
